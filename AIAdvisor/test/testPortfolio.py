@@ -4,7 +4,7 @@ Created on 2016. 4. 21.
 @author: thCho
 '''
 from common.time.Date import Date
-from engine.portfolio.portfolio import portfolio
+from engine.portfolio.portfolio_Backtest import portfolio
 
 
 startDate = '20150101'
