@@ -65,11 +65,11 @@ class SouthKoreaSettlementCalendar(AbstractCalendar):
             or (d == 15 and m == 4 and y == 2004)\
             or (d == 31 and m == 5 and y == 2006)\
             or (d == 19 and m == 12 and y == 2007)\
-            or (d ==  9 and m == 4 and y == 2008)\
-            or (d ==  2 and m == 6 and y == 2010)\
+            or (d == 9 and m == 4 and y == 2008)\
+            or (d == 2 and m == 6 and y == 2010)\
             or (d == 11 and m == 4 and y == 2012)\
             or (d == 19 and m == 12 and y == 2012)\
-            or (d ==  4 and m == 6 and y == 2014)\
+            or (d == 4 and m == 6 and y == 2014)\
             or (d == 13 and m == 4 and y == 2016)\
             or (d == 20 and m == 12 and y == 2017)\
             or (d == 18 and m == 2 and y == 2015) \

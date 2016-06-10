@@ -6,6 +6,7 @@ Created on 2016. 4. 20.
 
 from abc import ABCMeta, abstractmethod
 
+
 class AbstractStrategy(object):
     __metaclass__ = ABCMeta
     

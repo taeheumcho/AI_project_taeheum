@@ -1,6 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 
+
 urlpatterns = [
     # Examples:
     # url(r'^$', 'AIAdvisor.views.home', name='home'),

@@ -5,6 +5,8 @@ Created on 2016. 4. 20.
 '''
 from common.marketInfo.abstractMarket import AbstractMarket
 from common.marketInfo.asset import Equity
+
+
 class market_KR(AbstractMarket):
     
     def __init__(self, assetType):

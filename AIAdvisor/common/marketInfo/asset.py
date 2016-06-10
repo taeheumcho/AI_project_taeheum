@@ -37,7 +37,7 @@ class Equity(Asset):
         self._assetName = assetName
         self._assetCode = assetCode
         self._equityType = equityType
-        super(Equity, self).__init__(assetName, assetCode, 
+        super(Equity, self).__init__(assetName, assetCode,
                                      TypeDef.AssetType.EQUITY)
     
     def getEquityType(self):
@@ -54,7 +54,7 @@ class Cash(Asset):
     def __init__(self, assetName, assetCode):
         self._assetName = assetName
         self._assetCode = assetCode
-        super(Cash, self).__init__(assetName, assetCode, 
+        super(Cash, self).__init__(assetName, assetCode,
                                      TypeDef.AssetType.CASH)
     
     def __str__(self):

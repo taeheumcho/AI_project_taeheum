@@ -5,6 +5,7 @@ Created on 2015. 8. 14.
 '''
 import this
 
+
 class Date():
     '''
     Date Class
@@ -99,7 +100,7 @@ class Date():
             
             return daycountYear - dayCount + dayCount2
         else :
-            -date.getDays(this) 
+            - date.getDays(this) 
         
     
     def getDayCountOfYear(self):
@@ -111,7 +112,7 @@ class Date():
         else :
             return self.m_day + self.TOTAL_DAYS_IN_MONTH[self.m_month - 2]
         
-    def isLeapYear(self, year = None):
+    def isLeapYear(self, year=None):
         if year is None :
             year = self.m_year
         if (year & 3) != 0 :
@@ -143,7 +144,7 @@ class Date():
             
             if self.m_month + months <= 12 :
                 newMonth = self.m_month + months
-                newDayOfMonth =  min(newDayOfMonth, self.getLastDayOfMonth(self.m_year + yearDelta, newMonth))
+                newDayOfMonth = min(newDayOfMonth, self.getLastDayOfMonth(self.m_year + yearDelta, newMonth))
                 ret = Date(Date.canonicalForm(self.m_year + yearDelta, newMonth, newDayOfMonth))
             else :
                 cnt = 1;
@@ -224,7 +225,7 @@ class Date():
                 ret = Date(Date.canonicalForm(self.m_year + yearDelta, newMonth, newDayOfMonth))
                 return ret.plusDays(days);
             
-    def getLastDayOfMonth(self, year = None, month = None) :
+    def getLastDayOfMonth(self, year=None, month=None) :
         if year is None and month is None : 
             if self.isLeapYear(year) and month == 2 :
                 return Date(Date.canonicalForm(self.m_year, self.m_month, self.LAST_DAY_IN_MONTH[self.m_month - 1] + 1))

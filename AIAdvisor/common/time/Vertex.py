@@ -78,7 +78,7 @@ class Vertex():
        self.m_year = int(value[:2])
        self.m_month = int(value[2:4])
        self.m_day = int(value[4:6])
-       #print self.m_year, self.m_month, self.m_day
+       # print self.m_year, self.m_month, self.m_day
     
     def __str__(self):
         return self.m_code
@@ -92,7 +92,7 @@ class Vertex():
         return None
     
     def getVertex(self):
-        #print self.m_day, self.m_month, self.m_year
+        # print self.m_day, self.m_month, self.m_year
         return self.m_day / 365.0 + self.m_month / 12.0 + self.m_year 
     
     def getYear(self):

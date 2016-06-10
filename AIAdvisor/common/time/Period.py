@@ -18,13 +18,13 @@ class Period():
         year = vertex.getYear()
         month = vertex.getMonth()
         day = vertex.getDay()
-        #tmpDate = self._asOfDate.plusDays(-5)
+        # tmpDate = self._asOfDate.plusDays(-5)
         tmpDate = self._asOfDate.plusYears(-year)
         tmpDate = tmpDate.plusMonths(-month)
         tmpDate = tmpDate.plusDays(-day)
         
         period = []
-        d1 = self._calendar.adjustDate(tmpDate, 
+        d1 = self._calendar.adjustDate(tmpDate,
                         BusinessDayConvention.MODIFIED_PRECEDING)
         period.append(d1)
         

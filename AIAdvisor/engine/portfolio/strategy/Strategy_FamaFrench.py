@@ -3,13 +3,21 @@ Created on 2016. 4. 20.
 
 @author: thCho
 '''
-from engine.strategy.AbstractStrategy import AbstractStrategy
 from abc import abstractmethod
+
+from engine.portfolio.strategy.AbstractStrategy import AbstractStrategy
+import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+
 
 class Strategy_FamaFrench(AbstractStrategy):
     def __init__(self):
+        self.asset_prices = [1]
         self.weight = []
     
    
-    def calculate_weights(self):
+    def calculate_weights(self, date):
+        trainingPeriod = 1
+        
         AbstractStrategy.calculate_weights(self)
