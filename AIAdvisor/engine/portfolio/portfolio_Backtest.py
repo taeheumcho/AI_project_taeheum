@@ -29,19 +29,12 @@ class portfolio(object):
             if elements.get('dt') >= testPeriod[0] and elements.get('dt') <= testPeriod[1] :
                 testDates.append(elements['dt'])
         
-        
         for dateElement in testDates:
             previous_weight = self.portfolio.getCurrentWeights()
-            assetPrices = []     
-            for assetCode in self.assetCodes:
-                assetPrices.append(StockData.objects.filter(dt=dateElement,ticker=assetCode).values("price_close")[0]['price_close'])
-            asset_value_array = [1]
-            asset_value_array += assetPrices
+            assetPrices = [StockData.objects.filter(dt=dateElement, ticker=assetCode).values("price_close")[0]['price_close'] for assetCode in self.assetCodes]   
+            asset_value_array = [1] + assetPrices
             currentValue = np.dot(np.array(asset_value_array), np.array(previous_weight).T)
-            
-            weight = self.strategy.calculate_weights(dateElement,currentValue)
-            
-#             print currentValue
+            weight = self.strategy.calculate_weights(dateElement, currentValue)
             self.portfolio.update_portfolio_data(dateElement, weight, currentValue)
             
     def get_weight_array(self):

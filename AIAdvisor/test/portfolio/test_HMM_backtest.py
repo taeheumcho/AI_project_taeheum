@@ -17,10 +17,15 @@ tradingDatesss = StockData.objects.values('dt').distinct()
 'strategy setting'
 hmmStrategy = Strategy_HMM(assetCodes, startDate)
 'PORTFOLIO SETTING'
-currentPrice = StockData.objects.filter(dt=teststartdate,ticker=assetCodes[0]).values("price_close")
-currentPrice2 = StockData.objects.filter(dt=teststartdate,ticker=assetCodes[1]).values("price_close")
+currentPrice = []
+currentPrice = [StockData.objects.filter(dt=teststartdate,ticker=assetCodes[0]).values("price_close")[0]['price_close'] for asset_code in assetCodes]
+# for asset_code in assetCodes:
+#     currentPrice.append()
 
-pfo_data = portfolio_data(startDate, 0, assetCodes, [1.0,currentPrice[0]['price_close'],currentPrice2[0]['price_close']], [1000000.0,0.0,0.0])
+assetPrice = [1]
+assetPrice = assetPrice + currentPrice
+
+pfo_data = portfolio_data(startDate, 0, assetCodes, assetPrice, [1000000.0,0.0,0.0])
 PFO = portfolio(pfo_data,hmmStrategy)
 PFO.backTest(period)
 

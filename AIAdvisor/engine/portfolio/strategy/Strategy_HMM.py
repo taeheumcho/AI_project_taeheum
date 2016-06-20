@@ -33,8 +33,9 @@ class Strategy_HMM(AbstractStrategy):
                     self.trainingDates.append(elements['dt'])
             for assetCode in self.asset_codes:
                 assetValues = []
-                for each_date in self.trainingDates:
-                    assetValues.append(StockData.objects.filter(dt=each_date,ticker=assetCode).values("price_close")[0]['price_close'])
+#                 for each_date in self.trainingDates:
+#                     assetValues.append(StockData.objects.filter(dt=each_date,ticker=assetCode).values("price_close")[0]['price_close'])
+                assetValues = [StockData.objects.filter(dt=each_date,ticker=assetCode).values("price_close")[0]['price_close'] for each_date in self.trainingDates]    
                 self.historical_Data[assetCode] = assetValues
             self.stacked = True
         else:
@@ -59,9 +60,9 @@ class Strategy_HMM(AbstractStrategy):
             
         self.weight = []
         self.weight.append(target['money'])
-        for assetCode in self.asset_codes:
-            self.weight.append(target[assetCode])
-            
+#         for assetCode in self.asset_codes:
+#             self.weight.append(target[assetCode])
+        self.weight += [target[assetCode] for assetCode in self.asset_codes]    
         return self.weight
             
 # def get_asset_price(date, assetCode):
