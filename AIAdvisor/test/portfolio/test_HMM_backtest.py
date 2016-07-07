@@ -29,8 +29,8 @@ pfo_data = portfolio_data(startDate, 0, assetCodes, assetPrice, [1000000.0,0.0,0
 PFO = portfolio(pfo_data,hmmStrategy)
 PFO.backTest(period)
 
-print PFO.get_weight_array()
-print PFO.get_day_PnL()
-print PFO.get_current_weight()
-print PFO.get_accumulated_PnL()
+print (PFO.get_weight_array())
+print (PFO.get_day_PnL())
+print (PFO.get_current_weight())
+print (PFO.get_accumulated_PnL())
 

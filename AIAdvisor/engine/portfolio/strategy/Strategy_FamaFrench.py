@@ -8,8 +8,6 @@ from abc import abstractmethod
 from engine.portfolio.strategy.AbstractStrategy import AbstractStrategy
 import numpy as np
 import pandas as pd
-import statsmodels.api as sm
-
 
 class Strategy_FamaFrench(AbstractStrategy):
     def __init__(self):

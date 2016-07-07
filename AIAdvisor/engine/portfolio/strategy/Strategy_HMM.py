@@ -8,7 +8,7 @@ from AIMapper.models import StockData
 from engine.portfolio.strategy.AbstractStrategy import AbstractStrategy
 from hmmlearn.hmm import GaussianHMM
 import numpy as np
-import thread
+import _thread
 
 
 tmp_asset_price = {'money': 1.0}

@@ -88,7 +88,7 @@ class Vertex():
         if code in Vertex.supportedVertices :
             return Vertex(code, Vertex.supportedVertices[code])
         
-        print "ERROR: Unsupported Vertex [" + code + "]"
+        print ("ERROR: Unsupported Vertex [" + code + "]")
         return None
     
     def getVertex(self):
