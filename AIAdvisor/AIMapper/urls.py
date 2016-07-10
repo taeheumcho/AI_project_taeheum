@@ -9,7 +9,7 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^AIMapper/$', views.stockHome, name='stockHome'),
+    url(r'^aiadvisor/$', views.stockHome, name='stockHome'),
 #     url(r'^roboadvisor/backtest/$', views.backTestHome, name='backtest'),
 #     url(r'^roboadvisor/backtest/results/$', views.results, name='strategyResults'),
 
