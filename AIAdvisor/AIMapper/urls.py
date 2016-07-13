@@ -10,6 +10,7 @@ from . import views
 
 urlpatterns = [
     url(r'^aiadvisor/$', views.stockHome, name='stockHome'),
+    url(r'^aiadvisor/backtest/$', views.backTestHome, name='backTestHome'),
 #     url(r'^roboadvisor/backtest/$', views.backTestHome, name='backtest'),
 #     url(r'^roboadvisor/backtest/results/$', views.results, name='strategyResults'),
 

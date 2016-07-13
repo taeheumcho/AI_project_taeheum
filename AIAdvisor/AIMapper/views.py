@@ -5,3 +5,7 @@ from django.template.context_processors import request
 # Create your views here.
 def stockHome(request):
     return render(request, 'AIMapper/home.html')
+
+
+def backTestHome(request):
+    return render(request, 'AIMapper/backtest.html')
