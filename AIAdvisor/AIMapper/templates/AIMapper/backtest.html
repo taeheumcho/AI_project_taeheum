@@ -1,5 +1,84 @@
 {% extends "AIMapper/base.html" %}
+{% block head %}
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+   
+    <script type="text/javascript">
+    $(function () {
+    	var chart;
+    	$(document).ready(function () { 
+        	$('#container').highcharts({
+            chart: {
+                type: 'scatter',
+                margin: [70, 50, 60, 80],
+                events: {
+                    click: function (e) {
+                        // find the clicked values and the series
+                        var x = e.xAxis[0].value,
+                            y = e.yAxis[0].value,
+                            series = this.series[0];
+
+                        // Add it
+                        series.addPoint([x, y]);
+
+                    }
+                }
+            },
+            title: {
+                text: 'User supplied data'
+            },
+            subtitle: {
+                text: 'Click the plot area to add a point. Click a point to remove it.'
+            },
+            xAxis: {
+                gridLineWidth: 1,
+                minPadding: 0.2,
+                maxPadding: 0.2,
+                maxZoom: 60
+            },
+            yAxis: {
+                title: {
+                    text: 'Value'
+                },
+                minPadding: 0.2,
+                maxPadding: 0.2,
+                maxZoom: 60,
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            legend: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            plotOptions: {
+                series: {
+                    lineWidth: 1,
+                    point: {
+                        events: {
+                            'click': function () {
+                                if (this.series.data.length > 1) {
+                                    this.remove();
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            series: [{
+                data: [[20, 20], [80, 80]]
+            }]
+        });
+        });
+
+    });
+    </script>
+    	
+{% endblock %}
 {% block content %}
 <div id="page-wrapper">
     <div class="row">
@@ -34,8 +113,8 @@
                                     <input class = "form-control col-sm-3" id="endstrt" type="date">
                                     
                                 </div>
-                                <button id = "reset" type="reset" class="btn btn-default col-sm-offset-8 col-sm-2">Reset</button> 
-                                <button id = "execute" type="submit" class="btn btn-default col-sm-2">Execute Test</button>
+                                <button id = "reset" type="reset" class="btn btn-default col-sm-offset-8 col-sm-2" onclick = "visiblity_showAndHid('reset')">Reset</button> 
+                                <button id = "execute" type="button" class="btn btn-default col-sm-2" onclick = "visiblity_showAndHid('execute')">Execute Test</button>
                             </form>
                             
                         </div>
@@ -53,8 +132,10 @@
 	            <div class="panel panel-default">
 	                <div class="panel-body">
 	                	<div class = "col-lg-12">
-	                       	<input name="a_input" value="A: type here"/>
-	                       	<input type="submit"/>
+	                	 <script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	                       	<div id="container" style="min-width: 310px; height: 400px; max-width: 700px; margin: 0 auto"></div>
+
 	                    </div>  
 	                </div>
 	            </div>
