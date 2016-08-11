@@ -2,8 +2,9 @@ Django == 1.8.13
 hmmlearn == 0.2.0
 Keras == 1.0.5
 numpy == 1.11.1+mkl
+scipy == 0.18.0
 pandas == 0.18.1
 lunardate == 0.1.5
 matplotlib == 2.0.0b1
-pymysql
+pymysql == 0.7.6
 sklearn == 0.0
