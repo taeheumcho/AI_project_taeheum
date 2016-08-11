@@ -5,3 +5,5 @@ numpy == 1.11.1+mkl
 pandas == 0.18.1
 lunardate == 0.1.5
 matplotlib == 2.0.0b1
+pymysql
+sklearn == 0.0
